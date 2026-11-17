@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.08] bg-dark-950/80 backdrop-blur-md pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+    <footer className="relative border-t border-white/[0.08] bg-black/40 backdrop-blur-md pt-12 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo & Tagline */}

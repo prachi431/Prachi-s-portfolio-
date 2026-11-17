@@ -12,7 +12,7 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-dark-950 text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="min-h-screen bg-[#6b21a8] text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-300">
       {/* Sticky Navbar */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
