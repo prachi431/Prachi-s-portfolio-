@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
+import RocketEffect from './components/RocketEffect';
 
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -42,6 +43,9 @@ export default function App() {
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
       />
+
+      {/* Interactive Rocket Launch & Sound FX */}
+      <RocketEffect />
     </div>
   );
 }

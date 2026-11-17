@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Github, ExternalLink, Terminal, ChevronRight, CheckCircle2, Sparkles, Code2 } from 'lucide-react';
 
 export default function ProjectCard({ project }) {
@@ -13,7 +14,14 @@ export default function ProjectCard({ project }) {
   const dotColorClass = isPython ? 'bg-yellow-400' : 'bg-cyan-400';
 
   return (
-    <div className="glass-card rounded-2xl border border-white/[0.08] overflow-hidden flex flex-col justify-between group hover:border-cyan-500/40 transition-all duration-300 relative">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+      className="glass-card rounded-2xl border border-white/[0.08] overflow-hidden flex flex-col justify-between group hover:border-purple-500/40 transition-all duration-300 relative"
+    >
       {/* Top Accent Gradient Bar */}
       <div className={`h-1.5 w-full bg-gradient-to-r ${
         isPython 
@@ -108,6 +116,6 @@ export default function ProjectCard({ project }) {
           </a>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

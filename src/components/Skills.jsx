@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   FileCode, 
   Terminal, 
@@ -97,9 +98,12 @@ export default function Skills() {
                 {catSection.skills.map((skill) => {
                   const Icon = iconMap[skill.icon] || Sparkles;
                   return (
-                    <div
+                    <motion.div
                       key={skill.name}
-                      className="glass-card p-5 rounded-2xl border border-white/[0.07] flex flex-col justify-between group hover:border-cyan-500/30 transition-all duration-300"
+                      whileHover={{ scale: 1.03, y: -4 }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                      className="glass-card p-5 rounded-2xl border border-white/[0.07] flex flex-col justify-between group hover:border-purple-500/40 transition-colors duration-200 cursor-pointer"
                     >
                       <div className="flex items-start justify-between gap-3 mb-3">
                         <div className="flex items-center space-x-3">
@@ -120,7 +124,7 @@ export default function Skills() {
                       <p className="text-xs text-slate-300 leading-relaxed font-light mt-2 pt-2 border-t border-white/[0.05]">
                         {skill.detail}
                       </p>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>

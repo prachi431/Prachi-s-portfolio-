@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Terminal, MapPin, Code } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -15,7 +16,12 @@ export default function Hero({ onOpenResume }) {
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Headline, Bio, CTAs, Socials */}
-        <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="lg:col-span-7 space-y-7 text-center lg:text-left"
+        >
           {/* Status Pill Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 shadow-inner backdrop-blur-sm">
             <span className="flex h-2 w-2 relative">
@@ -118,10 +124,19 @@ export default function Hero({ onOpenResume }) {
               <Mail className="w-4 h-4" />
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Column: Interactive Code Terminal Card (Glassmorphism) */}
-        <div className="lg:col-span-5 flex justify-center">
+        {/* Right Column: Interactive Code Terminal Card (Floating Glassmorphism) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+          transition={{
+            opacity: { duration: 0.8 },
+            scale: { duration: 0.8 },
+            y: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
+          }}
+          className="lg:col-span-5 flex justify-center"
+        >
           <div className="w-full max-w-md glass-card rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl shadow-black/60 relative group">
             {/* Window title bar */}
             <div className="px-4 py-3 bg-dark-900/90 border-b border-white/[0.08] flex items-center justify-between">
@@ -183,7 +198,7 @@ export default function Hero({ onOpenResume }) {
               <span className="text-slate-500">GCC 13.2 / Python 3.12</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
