@@ -1,6 +1,7 @@
 export const personalInfo = {
   name: "Prachi Rawat",
-  headline: "Hi, I’m Prachi Rawat — AI & ML Student.",
+  avatarUrl: "/profile.jpg", // Saved LinkedIn PFP (with fallback to /avatar.svg)
+  headline: "Greetings — WELCOME PRACHI'S PORTFOLIO",
   shortTitle: "AI & ML Undergraduate",
   tagline: "Building strong programming fundamentals & exploring real-world AI applications",
   bio: "I am an Artificial Intelligence and Machine Learning undergraduate at Bangalore Institute of Technology (BIT), originally from Haryana. I am passionate about building strong programming fundamentals, solving algorithmic problems, and exploring real-world applications of AI.",

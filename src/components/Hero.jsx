@@ -28,13 +28,17 @@ export default function Hero({ onOpenResume }) {
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
-            Hi, I’m{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Prachi Rawat
-            </span>{' '}
-            <span className="inline-block">— AI & ML Student.</span>
-          </h1>
+          <div className="space-y-2">
+            <span className="text-xl sm:text-2xl font-mono text-purple-300 font-semibold tracking-wide block">
+              Greetings
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              WELCOME{' '}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                PRACHI'S PORTFOLIO
+              </span>
+            </h1>
+          </div>
 
           {/* Bio */}
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">

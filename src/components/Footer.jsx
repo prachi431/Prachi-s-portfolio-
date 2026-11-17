@@ -16,8 +16,17 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left space-y-1">
-            <a href="#" className="inline-block text-lg font-bold text-white hover:text-cyan-400 transition-colors">
-              {personalInfo.name}
+            <a href="#" className="inline-flex items-center gap-2.5 text-lg font-bold text-white hover:text-purple-300 transition-colors">
+              <img
+                src={personalInfo.avatarUrl}
+                alt={personalInfo.name}
+                className="w-6 h-6 rounded-full object-cover ring-1 ring-purple-400"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/avatar.svg";
+                }}
+              />
+              <span>{personalInfo.name}</span>
             </a>
             <p className="text-xs text-slate-400 font-mono">
               B.E. in AI & ML • Bangalore Institute of Technology

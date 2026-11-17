@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="50%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#701a75" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+    <linearGradient id="hair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#27272a" />
+    </linearGradient>
+    <linearGradient id="jacket" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" fill="url(#bg)" rx="80"/>
+  <!-- Hair back -->
+  <path d="M 46 80 C 44 115 50 135 60 145 L 100 145 C 110 135 116 115 114 80 C 114 45 46 45 46 80 Z" fill="url(#hair)"/>
+  <!-- Torso / Jacket -->
+  <path d="M 32 160 C 35 125 55 118 80 118 C 105 118 125 125 128 160 Z" fill="url(#jacket)"/>
+  <!-- Neck -->
+  <rect x="70" y="92" width="20" height="24" rx="6" fill="url(#skin)"/>
+  <!-- Head -->
+  <ellipse cx="80" cy="74" rx="26" ry="30" fill="url(#skin)"/>
+  <!-- Hair front style -->
+  <path d="M 54 70 C 54 44 64 36 80 36 C 96 36 106 44 106 70 C 104 60 98 48 80 48 C 62 48 56 60 54 70 Z" fill="url(#hair)"/>
+  <path d="M 54 70 C 58 75 66 84 72 84 C 74 84 70 72 68 64 Z" fill="url(#hair)"/>
+  <path d="M 106 70 C 102 75 94 84 88 84 C 86 84 90 72 92 64 Z" fill="url(#hair)"/>
+</svg>

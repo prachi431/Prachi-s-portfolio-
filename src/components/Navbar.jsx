@@ -42,20 +42,24 @@ export default function Navbar({ onOpenResume }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Brand */}
+          {/* Logo / Brand with Profile Picture */}
           <a
             href="#"
             className="group flex items-center space-x-3 text-white font-semibold focus:outline-none"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-600 to-purple-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
-              <div className="w-full h-full bg-dark-950 rounded-[11px] flex items-center justify-center">
-                <span className="font-mono text-xs font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  PR
-                </span>
-              </div>
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-purple-500 via-fuchsia-500 to-pink-500 p-[2px] shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300 group-hover:scale-105 shrink-0 overflow-hidden">
+              <img
+                src={personalInfo.avatarUrl}
+                alt={personalInfo.name}
+                className="w-full h-full object-cover rounded-full bg-dark-950"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/avatar.svg";
+                }}
+              />
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+              <span className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-purple-300 transition-colors">
                 {personalInfo.name}
               </span>
               <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
