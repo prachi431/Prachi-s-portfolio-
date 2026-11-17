@@ -7,7 +7,7 @@ export const personalInfo = {
   location: "Bangalore, India (Originally from Haryana)",
   email: "prachirawat.dev@gmail.com", // Replace with your primary email
   github: "https://github.com/prachi-rawat", // Replace with your GitHub handle
-  linkedin: "https://linkedin.com/in/prachi-rawat", // Replace with your LinkedIn URL
+  linkedin: "https://www.linkedin.com/in/prachi-rawat-0840b8368",
   resumeUrl: "#resume", // Can be a Google Drive link, PDF path in /public, etc.
 };
 
