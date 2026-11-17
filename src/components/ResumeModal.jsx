@@ -19,7 +19,7 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
             <div>
               <h3 className="text-base font-bold text-white">Curriculum Vitae / Resume</h3>
-              <p className="text-xs text-slate-400 font-mono">Prachi Rawat • AI & ML (1st Year)</p>
+              <p className="text-xs text-slate-400 font-mono">Prachi Rawat • AI & ML</p>
             </div>
           </div>
 

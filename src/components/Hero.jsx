@@ -33,7 +33,7 @@ export default function Hero({ onOpenResume }) {
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Prachi Rawat
             </span>{' '}
-            <span className="inline-block">— First-Year AI & ML Student.</span>
+            <span className="inline-block">— AI & ML Student.</span>
           </h1>
 
           {/* Bio */}
@@ -151,13 +151,13 @@ export default function Hero({ onOpenResume }) {
                 <span className="text-cyan-400">char</span> origin[] = <span className="text-teal-300">"Haryana, India"</span>;
               </div>
               <div className="pl-4 text-slate-300">
-                <span className="text-cyan-400">int</span> year = <span className="text-amber-400">1</span>;
+                <span className="text-cyan-400">char</span> major[] = <span className="text-teal-300">"AI & ML"</span>;
               </div>
               <div className="pl-4 text-slate-300">
                 <span className="text-cyan-400">char*</span> focus[] = &#123;
                 <span className="text-teal-300">"C"</span>,{' '}
                 <span className="text-teal-300">"Python"</span>,{' '}
-                <span className="text-teal-300">"AI/ML"</span>&#125;;
+                <span className="text-teal-300">"Algorithms"</span>&#125;;
               </div>
               <div>&#125; <span className="text-indigo-400">UndergradStudent</span>;</div>
               
@@ -174,7 +174,7 @@ export default function Hero({ onOpenResume }) {
             <div className="px-4 py-2.5 bg-dark-900/80 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-400">
               <span className="flex items-center gap-1.5 text-cyan-400">
                 <Sparkles className="w-3 h-3" />
-                Undergrad Class of '28
+                Undergrad • BIT Bengaluru
               </span>
               <span className="text-slate-500">GCC 13.2 / Python 3.12</span>
             </div>

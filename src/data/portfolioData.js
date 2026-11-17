@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Prachi Rawat",
-  headline: "Hi, I’m Prachi Rawat — First-Year AI & ML Student.",
+  headline: "Hi, I’m Prachi Rawat — AI & ML Student.",
   shortTitle: "AI & ML Undergraduate",
   tagline: "Building strong programming fundamentals & exploring real-world AI applications",
   bio: "I am an Artificial Intelligence and Machine Learning undergraduate at Bangalore Institute of Technology (BIT), originally from Haryana. I am passionate about building strong programming fundamentals, solving algorithmic problems, and exploring real-world applications of AI.",
@@ -14,7 +14,7 @@ export const personalInfo = {
 export const aboutData = {
   story: [
     "Originally from Haryana, I took a bold leap towards India's Silicon Valley to pursue my Bachelor of Engineering in Artificial Intelligence & Machine Learning at Bangalore Institute of Technology (BIT).",
-    "As a first-year undergraduate, I am actively building an ironclad foundation in core computer science. My current focus is mastering low-level programming with C and versatile problem-solving with Python, while exploring data structure fundamentals.",
+    "As an undergraduate, I am actively building an ironclad foundation in core computer science. My current focus is mastering low-level programming with C and versatile problem-solving with Python, while exploring data structure fundamentals.",
     "My journey is driven by an intense curiosity about how mathematics and code intersect to create intelligent systems. Beyond coursework, I spend my time coding terminal applications, breaking down algorithmic puzzles, and staying abreast of the rapid innovations shaping modern artificial intelligence."
   ],
   education: [
@@ -22,7 +22,7 @@ export const aboutData = {
       degree: "Bachelor of Engineering (B.E.) in AI & ML",
       institution: "Bangalore Institute of Technology (BIT)",
       location: "Bengaluru, Karnataka",
-      period: "2024 – 2028 (1st Year Undergraduate)",
+      period: "2024 – 2028 (Undergraduate)",
       status: "In Progress",
       highlights: [
         "Specialization in Artificial Intelligence & Machine Learning",
@@ -44,7 +44,7 @@ export const aboutData = {
   ],
   highlights: [
     {
-      title: "1st Year B.E. AI & ML",
+      title: "B.E. in AI & ML",
       subtitle: "Bangalore Institute of Technology",
       icon: "GraduationCap"
     },
