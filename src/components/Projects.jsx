@@ -26,7 +26,7 @@ export default function Projects() {
             <span>Showcase</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             Beginner-friendly projects built with C and Python, demonstrating low-level data persistence, command-line automation, and algorithmic logic.

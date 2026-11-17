@@ -30,7 +30,7 @@ export default function Hero({ onOpenResume }) {
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
             Hi, I’m{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Prachi Rawat
             </span>{' '}
             <span className="inline-block">— First-Year AI & ML Student.</span>
@@ -57,7 +57,7 @@ export default function Hero({ onOpenResume }) {
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-dark-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 rounded-xl hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>View Projects</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

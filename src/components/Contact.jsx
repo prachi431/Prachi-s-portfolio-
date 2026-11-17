@@ -77,7 +77,7 @@ export default function Contact() {
             <span>Get In Touch</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Let’s Connect & <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">Collaborate</span>
+            Let’s Connect & <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Collaborate</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             Interested in collaborating on AI/ML projects, discussing problem solving in C/Python, or sharing opportunities? Reach out directly.
@@ -284,7 +284,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-dark-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-300 hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-200 disabled:opacity-50 active:scale-[0.99]"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-200 disabled:opacity-50 active:scale-[0.99]"
                   >
                     {submitting ? (
                       <span>Sending Message...</span>

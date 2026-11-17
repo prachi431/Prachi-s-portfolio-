@@ -49,7 +49,7 @@ export default function Navbar({ onOpenResume }) {
           >
             <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-600 to-purple-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
               <div className="w-full h-full bg-dark-950 rounded-[11px] flex items-center justify-center">
-                <span className="font-mono text-xs font-bold bg-gradient-to-r from-cyan-400 to-indigo-300 bg-clip-text text-transparent">
+                <span className="font-mono text-xs font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   PR
                 </span>
               </div>

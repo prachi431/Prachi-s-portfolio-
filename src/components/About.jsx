@@ -16,7 +16,7 @@ export default function About() {
             <span>About Me</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Background & <span className="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">Education</span>
+            Background & <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Education</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             From Haryana to Bangalore’s vibrant technology ecosystem — how I am shaping my career in Artificial Intelligence & Machine Learning.
