@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Github, ExternalLink, Terminal, ChevronRight, CheckCircle2, Sparkles, Code2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, ExternalLink, Terminal, ChevronRight, CheckCircle2, Sparkles, Code2, PlayCircle, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function ProjectCard({ project }) {
   const [showDetails, setShowDetails] = useState(false);
+  const [showOutput, setShowOutput] = useState(false);
+  const [activeTab, setActiveTab] = useState('code'); // 'code' | 'output'
 
   // Distinguish language colors
   const isPython = project.primaryLanguage === 'Python';
@@ -12,6 +14,7 @@ export default function ProjectCard({ project }) {
     : 'text-cyan-300 bg-cyan-950/40 border-cyan-500/30';
 
   const dotColorClass = isPython ? 'bg-yellow-400' : 'bg-cyan-400';
+  const hasCodeViewer = !!project.code;
 
   return (
     <motion.div
@@ -75,6 +78,139 @@ export default function ProjectCard({ project }) {
             ))}
           </ul>
         </div>
+
+        {/* ── Code Viewer (only if project has code) ── */}
+        {hasCodeViewer && (
+          <div className="mb-5">
+            {/* Toggle Button */}
+            <button
+              onClick={() => setShowOutput((v) => !v)}
+              className="w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl bg-slate-900/70 border border-white/[0.08] hover:border-cyan-500/40 hover:bg-slate-900 transition-all duration-200 group/code"
+            >
+              <span className="flex items-center gap-2 text-xs font-mono font-semibold text-slate-300 group-hover/code:text-cyan-300 transition-colors">
+                <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                View Source &amp; Output
+              </span>
+              {showOutput
+                ? <ChevronUp className="w-4 h-4 text-slate-400" />
+                : <ChevronDown className="w-4 h-4 text-slate-400" />
+              }
+            </button>
+
+            {/* Expandable Code + Output Panel */}
+            <AnimatePresence>
+              {showOutput && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
+                >
+                  {/* Window chrome */}
+                  <div className="mt-2 rounded-xl border border-white/[0.1] overflow-hidden shadow-2xl shadow-black/50">
+                    {/* Title bar */}
+                    <div className="flex items-center justify-between px-4 py-2.5 bg-[#1a1a2e] border-b border-white/[0.08]">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                        <span className="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                        <span className="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
+                        <Terminal className="w-3 h-3 text-cyan-400" />
+                        main.c — OnlineGDB
+                      </span>
+                      {/* Tab switcher */}
+                      <div className="flex items-center gap-1 bg-black/30 rounded-lg p-0.5">
+                        <button
+                          onClick={() => setActiveTab('code')}
+                          className={`text-[10px] font-mono px-2.5 py-1 rounded-md transition-all ${
+                            activeTab === 'code'
+                              ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+                              : 'text-slate-500 hover:text-slate-300'
+                          }`}
+                        >
+                          Code
+                        </button>
+                        <button
+                          onClick={() => setActiveTab('output')}
+                          className={`text-[10px] font-mono px-2.5 py-1 rounded-md transition-all flex items-center gap-1 ${
+                            activeTab === 'output'
+                              ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                              : 'text-slate-500 hover:text-slate-300'
+                          }`}
+                        >
+                          <PlayCircle className="w-2.5 h-2.5" />
+                          Output
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Code tab */}
+                    <AnimatePresence mode="wait">
+                      {activeTab === 'code' && (
+                        <motion.div
+                          key="code"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.15 }}
+                          className="bg-[#0d0d1a] p-4 overflow-x-auto"
+                        >
+                          <pre className="text-xs font-mono text-slate-300 leading-relaxed">
+                            {project.code.split('\n').map((line, i) => (
+                              <div key={i} className="flex gap-4 hover:bg-white/[0.02] rounded px-1">
+                                <span className="select-none text-slate-600 w-5 text-right shrink-0">{i + 1}</span>
+                                <span
+                                  className="text-slate-200"
+                                  dangerouslySetInnerHTML={{
+                                    __html: line
+                                      .replace(/&/g, '&amp;')
+                                      .replace(/</g, '&lt;')
+                                      .replace(/>/g, '&gt;')
+                                      .replace(/(#include\s*&lt;[^&]+&gt;)/g, '<span style="color:#f472b6">$1</span>')
+                                      .replace(/\b(int|char|float|double|return|for|if|else|while|void)\b/g, '<span style="color:#c084fc">$1</span>')
+                                      .replace(/(printf|scanf|main)/g, '<span style="color:#22d3ee">$1</span>')
+                                      .replace(/"([^"]*)"/g, '<span style="color:#5eead4">"$1"</span>')
+                                      .replace(/\/\/(.*)/g, '<span style="color:#64748b">//$1</span>')
+                                  }}
+                                />
+                              </div>
+                            ))}
+                          </pre>
+                        </motion.div>
+                      )}
+
+                      {/* Output tab */}
+                      {activeTab === 'output' && (
+                        <motion.div
+                          key="output"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.15 }}
+                          className="bg-[#0a0a0a] p-4"
+                        >
+                          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/[0.06]">
+                            <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">
+                              ▶ Program Output
+                            </span>
+                            <span className="text-[10px] font-mono text-slate-500">
+                              (input: 9)
+                            </span>
+                          </div>
+                          <pre className="text-xs font-mono text-emerald-300 leading-relaxed whitespace-pre-wrap">
+                            {project.codeOutput}
+                          </pre>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
 
         {/* Tech Stack Pills */}
         <div className="mt-auto pt-4 border-t border-white/[0.06]">

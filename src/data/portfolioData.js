@@ -202,6 +202,46 @@ export const projectsData = [
     ],
     status: "Completed",
     featuredBadge: "Algorithmic Logic"
+  },
+  {
+    id: 4,
+    title: "Infinite Table Loop",
+    tagline: "Multiplication Table Generator via Iterative Loop in C",
+    description: "A focused C program that accepts a user-defined integer and generates its complete multiplication table from 1 to 10 using a structured for-loop. Demonstrates core concepts of formatted I/O, loop control, and expression evaluation in C.",
+    primaryLanguage: "C",
+    techStack: ["C", "stdio.h", "for-loop", "scanf", "printf", "OnlineGDB"],
+    githubUrl: "https://github.com/prachi-rawat",
+    liveDemoUrl: null,
+    highlights: [
+      "Accepts dynamic integer input via scanf with proper format specifier",
+      "Iterates from 1 to 10 using a bounded for-loop with clean exit condition",
+      "Formats output as n*i=result using printf with multiple format arguments"
+    ],
+    status: "Completed",
+    featuredBadge: "Loop & I/O",
+    code: `#include <stdio.h>
+int main()
+{
+    int n;
+    printf("enter a number");
+    scanf("%d", &n);
+    for(int i= 1; i<=10;i++)
+    {
+        printf("%d*%d=%d\\n",n,i,n*i);
+    }
+    return 0;
+}`,
+    codeOutput: `enter a number: 9
+9*1=9
+9*2=18
+9*3=27
+9*4=36
+9*5=45
+9*6=54
+9*7=63
+9*8=72
+9*9=81
+9*10=90`
   }
 ];
 

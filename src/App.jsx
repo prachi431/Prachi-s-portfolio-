@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,11 +10,27 @@ import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
 import RocketEffect from './components/RocketEffect';
 
-export default function App() {
+function MainLayout() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const { isDark } = useTheme();
 
   return (
-    <div className="min-h-screen bg-cyber-grid text-slate-100 relative selection:bg-purple-500/20 selection:text-pink-300">
+    <div className={`min-h-screen relative selection:bg-purple-500/20 selection:text-pink-400 transition-colors duration-300 ${
+      isDark ? 'text-slate-100' : 'text-slate-800'
+    }`}>
+      {/* Fixed Fullscreen Background Image */}
+      <div 
+        className="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat bg-fixed transition-opacity duration-300"
+        style={{ backgroundImage: "url('/bg.jpg')" }}
+      />
+      
+      {/* Adaptive Theme Overlay */}
+      <div className={`fixed inset-0 -z-10 transition-colors duration-300 ${
+        isDark 
+          ? 'bg-slate-950/70 backdrop-blur-[1px]' 
+          : 'bg-white/40 backdrop-blur-[0.5px]'
+      }`} />
+
       {/* Sticky Navbar */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
@@ -47,5 +64,13 @@ export default function App() {
       {/* Interactive Rocket Launch & Sound FX */}
       <RocketEffect />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <MainLayout />
+    </ThemeProvider>
   );
 }

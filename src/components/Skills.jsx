@@ -52,7 +52,7 @@ export default function Skills() {
             <span>Technical Toolkit</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Skills & <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Competencies</span>
+            Skills <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Competencies</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             Categorized overview of foundational languages, algorithmic problem solving, and developer platforms I utilize.
